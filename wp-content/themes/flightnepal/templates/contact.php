@@ -12,7 +12,7 @@ Template Post Type: page
 		</div>
 	</section>
 
-	<section>
+	<section class="breadrcumb-section">
 		<div class="container">
 			<ul class="breadcrumb">
 				<li><a class="transition" href="<?php echo get_site_url(); ?>">Home</a></li>
@@ -56,20 +56,14 @@ Template Post Type: page
 					<h4>Details</h4>
 					<br>
 					<div class="contact-box" style="background-image: url(<?php bloginfo('template_directory'); ?>/images/pages/contact/details.jpg);">
-						<h4 class="white">Flight Nepal</h4>
-						<p class="white">Aero Mount Travel</p>
+						<h4 class="white">Flight-Nepal.com</h4>
+						<p class="white">We are your Adventure Experts.</p>
 						<div class="info">
-							<h6 class="white">Tel :</h6>
-							<p class="white">Nepal : 01-4423678 | 4423679</p>
-							<p class="white">USA : 212-918-1874 | 415-335-4266</p>
-							<br>
 							<h6 class="white">Email :</h6>
-							<p class="white">info@aeromounttravel.com</p>
-							<p class="white">booking@aeromounttravel.com</p>
+							<p class="white">info@flight-nepal.com</p>
 							<br>
-							<h6 class="white">Address :</h6>
-							<p class="white">Nepal : Nagpokhari 1, (Next to NMB Bank) Kathmandu, Nepal</p>
-							<p class="white">USA : 11373, Queens, New York, USA</p>
+							<h6 class="white">Questions? :</h6>
+							<p class="white"><a class="transition" href="<?php echo get_site_url(); ?>/faqs/">Read FAQs</a></p>
 						</div>
 					</div>
 				</div>

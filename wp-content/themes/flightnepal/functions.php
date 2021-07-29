@@ -42,7 +42,9 @@
 				'ajaxurl' => admin_url('admin-ajax.php'),
 				'check_nonce' => wp_create_nonce('hp-special-string')
 			));
-			wp_enqueue_style('basestyles', get_template_directory_uri().'/css/style.css', array(), $settings['design']['CSS_VERSION'], 'all');
+			wp_enqueue_style('basestyles', get_template_directory_uri().'/css/base.css', array(), $settings['design']['CSS_VERSION'], 'all');
+			wp_enqueue_style('pagestyles', get_template_directory_uri().'/css/pages.css', array(), $settings['design']['CSS_VERSION'], 'all');
+			wp_enqueue_style('animationstyles', get_template_directory_uri().'/css/vivify.min.css', array(), $settings['design']['CSS_VERSION'], 'all');
 			wp_enqueue_style('media-queries', get_template_directory_uri().'/css/responsive.css', array(), $settings['design']['CSS_VERSION'], 'all');
 		}
 		add_action('wp_enqueue_scripts','flight_nepal_script_enqueue');
@@ -107,7 +109,7 @@
 					while($allPosts->have_posts()):$allPosts->the_post();
 						echo '<div class="f-left one">';
 							echo '<a href="'; echo get_site_url(); echo '/tour-destination/'; echo str_replace(' ', '-', strtolower(get_the_title())); echo '/">';
-								echo '<div class="img" style="background-image: url('; the_post_thumbnail_url(); echo '"></div>';
+								echo '<div class="img cover-img" style="background-image: url('; the_post_thumbnail_url(); echo '"></div>';
 								echo '<div class="ol transition"></div>';
 								echo '<div class="inner">';
 									echo '<h5>'; the_title(); echo '</h5>';
@@ -163,7 +165,7 @@
 					while($allPosts->have_posts()):$allPosts->the_post();
 						echo '<div class="f-left one">';
 							echo '<a href="'; echo get_site_url(); echo '/hotel-destination/'; echo str_replace(' ', '-', strtolower(get_the_title())); echo '/">';
-								echo '<div class="img" style="background-image: url('; the_post_thumbnail_url(); echo '"></div>';
+								echo '<div class="img cover-img" style="background-image: url('; the_post_thumbnail_url(); echo '"></div>';
 								echo '<div class="ol transition"></div>';
 								echo '<div class="inner">';
 									echo '<h5>'; the_title(); echo '</h5>';
@@ -221,7 +223,7 @@
 					while($allPosts->have_posts()):$allPosts->the_post();
 						echo '<div class="f-left one">';
 							echo '<a href="'; echo get_site_url(); echo '/activity-destination/'; echo str_replace(' ', '-', strtolower(get_the_title())); echo '/">';
-								echo '<div class="img" style="background-image: url('; the_post_thumbnail_url(); echo '"></div>';
+								echo '<div class="img cover-img" style="background-image: url('; the_post_thumbnail_url(); echo '"></div>';
 								echo '<div class="ol transition"></div>';
 								echo '<div class="inner">';
 									echo '<h5>'; the_title(); echo '</h5>';
@@ -335,7 +337,6 @@
 			else :
 			endif;			
 		}
-
 
 		function get_travel_tips($limit='-1')
 		{
@@ -675,7 +676,7 @@
 								echo '</div>';
 								echo '<div class="desc transition">';
 									echo '<h5>'; the_title(); echo '</h5>';
-									echo '<p>'; echo get_post_meta( get_the_ID(), 'promo_introduction', true ); echo '</p>';
+									echo '<p>' . substr(strip_tags(get_post_meta( get_the_ID(), 'promo_introduction', true )), 0, 72) .'.. </p>';
 									echo '<button class="transition">Read more</button>';									
 								echo '</div>';
 							echo '</a>';

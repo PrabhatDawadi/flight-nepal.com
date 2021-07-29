@@ -12,7 +12,7 @@ Template Post Type: activity-destination, page, post
 		</div>
 	</section>
 
-	<section>
+	<section class="breadrcumb-section">
 		<div class="container">
 			<ul class="breadcrumb">
 				<li><a class="transition" href="<?php echo get_site_url(); ?>">Home</a></li>

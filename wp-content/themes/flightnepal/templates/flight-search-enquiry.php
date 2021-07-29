@@ -19,7 +19,7 @@ Template Post Type: page
 		</div>
 	</section>
 
-	<section>
+	<section class="breadrcumb-section">
 		<div class="container">
 			<ul class="breadcrumb">
 				<li><a class="transition" href="<?php echo get_site_url(); ?>">Home</a></li>

@@ -9,7 +9,7 @@ Template Post Type: promotions, page, post
 	<section class="common-page page-top" style="background-image: url(<?php bloginfo('template_directory'); ?>/images/pages/common/promotions.jpg);">
 	</section>
 
-	<section>
+	<section class="breadrcumb-section">
 		<div class="container">
 			<ul class="breadcrumb">
 				<li><a class="transition" href="<?php echo get_site_url(); ?>">Home</a></li>

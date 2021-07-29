@@ -1,103 +1,107 @@
 $(function(){
 
-	// ================== Table of Content =====================
-	//
-	// 		1. Common Javascript
-	//			1.1 Loading Effect
-	// 			1.2 Move to the Block
-	//			1.3 Auto Scroll
-	//			1.4 Escape Press
-	//			1.5 Menu Open / Close
-	//
-	// ============================================================
+	$('a[href^="#"]').on('click',function (e)
+	{
+		e.preventDefault();
+		var target = this.hash;
+		var $target = $(target);
+		$('html, body').stop().animate({
+			'scrollTop': $target.offset().top - 120
+		}, 'slow');
+	});
 
-	// =======================================
-	//			1. Common Javascript
-	// =======================================
+	if(location.hash)
+	{
+		var hash = location.hash;
+		window.scroll(0,0);
+		$("a[href="+hash+"]").click();
+	}
 
-		// ================================================================
-		//			1.1 Loading Effect
-		// ================================================================
+	$(document).keyup(function(e)
+	{
+		if (e.keyCode == 27)
+		{
+			closeMenu();
+			closeNotification();
+		}
+	});
 
-			var openLoader = function()
-			{
-				$('#loader').show();
-			};
+	$('img#menuButton').on('click', function()
+	{
+		openMenu();
+	});
 
-			var closeLoader = function()
-			{
-				$('#loader').hide();
-			};
+	$('.transparentMenuActive').on('click', function()
+	{
+		closeMenu();
+	});
 
-		// ================================================================
-		//			1.2 Move to the Block
-		// ================================================================
+	var openMenu = function()
+	{
+		$('nav').animate(
+		{
+			"left": 0
+		}, 200);
+		$('.transparentMenuActive').fadeIn(200);
+	};
 
-			$('a[href^="#"]').on('click',function (e)
-			{
-				e.preventDefault();
-				var target = this.hash;
-				var $target = $(target);
-				$('html, body').stop().animate({
-					'scrollTop': $target.offset().top - 120
-				}, 'slow');
-			});
+	var closeMenu = function()
+	{
+		$('nav').animate(
+		{
+			"left": -220
+		}, 200);
+		$('.transparentMenuActive').fadeOut(200);
+	};
 
-		// ================================================================
-		//			1.3 Auto Scroll
-		// ================================================================
+	var removeActivePlanFromList = function() 
+	{
+		$('ul#planning-options li').removeClass('no-show');
+		const ACTIVE_PLAN = $('.selected-planning').attr('data-plan');
+		const s = $('ul#planning-options').find("[data-plan='" + ACTIVE_PLAN + "']").addClass('no-show');
+	}
+	removeActivePlanFromList();
+	
+	$(document).on('click', '#planning', function()
+	{
+		document.addEventListener('click', clickOutsidePlanningOptions, false);
+		$('#planning-options').show();
+	});
 
-			if(location.hash)
-			{
-				var hash = location.hash;
-				window.scroll(0,0);
-				$("a[href="+hash+"]").click();
+	$(document).on('click', 'ul#planning-options li', function(e) {
+		document.removeEventListener('click', clickOutsideOriginInput, false);
+		const url = $(this).attr('data-url');
+		const plan = $(this).attr('data-plan');
+		const txt = $(this).find('p').html();
+		$('.selected-planning').html(txt);
+		$('.selected-planning').attr('data-url', url);
+		$('.selected-planning').attr('data-plan', plan);
+		$('#planning-options').hide();
+		removeActivePlanFromList();
+	});
+
+	function clickOutsidePlanningOptions()
+	{
+		$('body').click(function (event)
+		{
+			if ($(event.target).is($('#planning-options li'))) {
+				return;
+			} 
+			else {
+				document.removeEventListener('click', clickOutsideOriginInput, false);
+				$('#planning-options').hide();
+				removeActivePlanFromList();
 			}
+		});
+	}
 
-		// ================================================================
-		//			1.4 Escape Press
-		// ================================================================
+	$(document).on('click', 'button#plan-go', function(e) {
+		const url = $('p.selected-planning').attr('data-url');
+		window.location.href = url;
+	});
 
-			$(document).keyup(function(e)
-			{
-               	if (e.keyCode == 27)
-               	{
-            		closeMenu();
-            		closeNotification();
-               	}
-        	});
 
-        // ================================================================
-		//			1.5 Menu Open / Close
-		// ================================================================
-
-			$('img#menuButton').on('click', function()
-			{
-				openMenu();
-			});
-
-			$('.transparentMenuActive').on('click', function()
-			{
-				closeMenu();
-			});
-
-			var openMenu = function()
-			{
-				$('nav').animate(
-				{
-					"left": 0
-				}, 200);
-				$('.transparentMenuActive').fadeIn(200);
-			};
-
-			var closeMenu = function()
-			{
-				$('nav').animate(
-				{
-					"left": -220
-				}, 200);
-				$('.transparentMenuActive').fadeOut(200);
-			};
+		
 
 		// ================================================================
 		//			1.6 Countries
