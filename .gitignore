@@ -15,6 +15,7 @@ wp-content/**/
 !wp-content/plugins/promotions/
 !wp-content/plugins/tour-destination/
 !wp-content/plugins/tours/
+!wp-content/plugins/wordpress-seo/
 !wp-content/themes/
 !wp-content/themes/flightnepal/
 
