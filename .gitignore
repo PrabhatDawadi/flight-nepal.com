@@ -4,26 +4,9 @@
 
 # ignore everything in the "wp-content" directory, except:
 # "mu-plugins", "plugins", "themes" directory
-
-# wp-content/*
-# wp-content/**/
-# !wp-content/plugins/
-# !wp-content/plugins/activity-destination
-# !wp-content/plugins/faq/
-# !wp-content/plugins/fn-activities/
-# !wp-content/plugins/hotel-destination/
-# !wp-content/plugins/hotels/
-# !wp-content/plugins/promotions/
-# !wp-content/plugins/tour-destination/
-# !wp-content/plugins/tours/
-# !wp-content/plugins/contact-form-7/
-# !wp-content/plugins/flamingo/
-# !wp-content/plugins/newsletter/
-# !wp-content/plugins/tabs-responsive/
-# !wp-content/plugins/wps-hide-login/
-# !wp-content/plugins/wordpress-seo/
-# !wp-content/themes/
-# !wp-content/themes/flightnepal/
+wp-content/*
+!wp-content/themes/
+!wp-content/themes/flightnepal/
 
 # ignore node dependency directories
 node_modules/
