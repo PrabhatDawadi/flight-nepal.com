@@ -26,7 +26,11 @@ Template Post Type: activity-destination, page, post
 		<div class="container">
 			<div class="of-hid">
 				<div class="f-left left-content main-content">
-					<div id="main-content"><?php the_content(); ?></div>
+					<div id="main-content">
+						<div class="readable">
+							<?php the_content(); ?>
+						</div>
+					</div>
 					<div>
 						<h5>Activities in <?php the_title(); ?> :</h5>
 						<div class="country-wise of-hid">

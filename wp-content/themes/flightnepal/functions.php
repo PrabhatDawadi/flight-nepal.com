@@ -357,7 +357,7 @@
 									echo '<img src="'; the_post_thumbnail_url(); echo '" alt=""/>';
 							echo '</div>';
 							echo '<div class="desc transition">';
-								echo '<h6>'; the_title(); echo '</h6>';
+								echo '<h5>'; the_title(); echo '</h5>';
 								echo '<p class="transition read-more">Read more</p>';
 							echo '</div>';
 						echo '</a>';
@@ -388,7 +388,7 @@
 									echo '<img src="'; the_post_thumbnail_url(); echo '" alt=""/>';
 								echo '</div>';
 								echo '<div class="desc transition">';
-									echo '<h6>'; the_title(); echo '</h6>';
+									echo '<h5>'; the_title(); echo '</h5>';
 									echo '<p class="transition read-more">Read more</p>';
 								echo '</div>';
 							echo '</a>';
@@ -708,7 +708,7 @@
 									echo '<img src="'; the_post_thumbnail_url(); echo '" alt=""/>';
 								echo '</div>';
 								echo '<div class="desc transition">';
-									echo '<h6>'; the_title(); echo '</h6>';
+									echo '<h5>'; the_title(); echo '</h5>';
 									echo '<p class="transition read-more">Read more</p>';
 								echo '</div>';
 							echo '</a>';
@@ -741,7 +741,7 @@
 										echo '<img src="'; the_post_thumbnail_url(); echo '" alt=""/>';
 									echo '</div>';
 									echo '<div class="desc transition">';
-										echo '<h6>'; the_title(); echo '</h6>';
+										echo '<h5>'; the_title(); echo '</h5>';
 										echo '<p class="transition read-more">Read more</p>';
 									echo '</div>';
 								echo '</a>';

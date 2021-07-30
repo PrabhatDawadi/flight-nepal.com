@@ -54,6 +54,8 @@ $(function(){
 		$('.transparentMenuActive').fadeOut(200);
 	};
 
+	// ====== Home Landing ====== //
+
 	var removeActivePlanFromList = function() 
 	{
 		$('ul#planning-options li').removeClass('no-show');
@@ -100,108 +102,134 @@ $(function(){
 		window.location.href = url;
 	});
 
+	// ====== Countries Populate ====== //
+
+	$(document).ready(function()
+	{
+		let append = '';
+		$.each(countries, function(key, value) {
+			append += '<li data="' + value.code.toLowerCase() + '" code="' + value.dial_code + '" >';
+			append += '<div class="f" style="background-image: url(https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/' + value.code.toLowerCase() + '.svg);">';
+			append += '</div>';
+			append += '<p>' + value.name + '</p>';
+			append += '</li>';
+		});
+		$('ul.countriesList').html(append);
+	});
+
+	$(document).on('click', '.openCountrySelector', function(e)
+	{
+		$(this).parents().eq(1).find('.phone-holder').toggleClass('active');
+	});
+
+	$(document).on('click', 'ul.countriesList li' , function(e)
+	{
+		let countryCode = $(this).attr('data');
+		let countryDialCode = $(this).attr('code');
+		$(this).parents().eq(1).find('.flag').css('background-image', 'url(https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/' + countryCode + '.svg)');
+		$(this).parents().eq(1).find('.code').html(countryDialCode);
+		$('.phone-holder').removeClass('active');
+	});
+
+	// ====== Form Populate ====== //
+
+	const groupSize = ['1','2','3','4','5','6','7','8','9','10', '10+'];
+	const hotelRooms = ['1','2','3','4','4+'];
+	const hotelAdults = ['1','2','3','4','5','6','7','8','8+'];
+	const hotelChildren = ['0','1','2','3','4','5','6','6+'];
+	const hotelType = ['1','2','3','4','5'];
+
+	const pad = (d) => {
+		return (d < 10) ? '0' + d.toString() : d.toString();
+	}
+
+	const generateBookingRefNo = (str) => 
+	{
+		const d = new Date();
+		return 'FN-' + str + '-' + d.getFullYear() + '' + pad(d.getMonth()) + '' + d.getDate() + '' + pad(d.getHours()) + '' + d.getMinutes() + '' + d.getSeconds();
+	};
+
+	$(document).ready(function()
+	{
+		let appendGroupSize = '<option value="">Select your group size</option>';
+		$.each(groupSize, function(key, value) {
+			appendGroupSize += '<option value="' + value + '" >' + value + '</option>';
+		});
+		$('select.groupSize').html(appendGroupSize);
+
+		let appendHotelRooms = '<option value="">How many rooms?</option>';
+		$.each(hotelRooms, function(key, value) {
+			appendHotelRooms += '<option value="' + value + '" >' + value + '</option>';
+		});
+		$('select.hotelRooms').html(appendHotelRooms);
+
+		let appendHotelAdults = '<option value="">How many adults?</option>';
+		$.each(hotelAdults, function(key, value) {
+			appendHotelAdults += '<option value="' + value + '" >' + value + '</option>';
+		});
+		$('select.hotelAdults').html(appendHotelAdults);
+
+		let appendHotelChildren = '<option value="">How many children?</option>';
+		$.each(hotelChildren, function(key, value) {
+			appendHotelChildren += '<option value="' + value + '" >' + value + '</option>';
+		});
+		$('select.hotelChildren').html(appendHotelChildren);
+
+		let appendHotelType = '<option value="">Select your preference</option>';
+		$.each(hotelType, function(key, value) {
+			appendHotelType += '<option value="' + value + ' star' + '" >' + value + ' star' + '</option>';
+		});
+		$('select.hotelType').html(appendHotelType);
+	});
+
+	$(document).ready(function($)
+	{
+		$(document).on('focus', 'input.datepickerDate' , function(e)
+		{
+			$(this).datepicker();
+		});
+	});
+
+	// ====== Input Ranges ====== //
+
+	$(document).on('input', '#tourBudget', function()
+	{
+		$('#tourBudgetInput').val($(this).val());
+	});
+
+	$(document).on('input', '#hotelBudget', function()
+	{
+		$('#hotelBudgetInput').val($(this).val());
+	});
+
+	$(document).on('input', '#activityBudget', function()
+	{
+		$('#activityBudgetInput').val($(this).val());
+	});
+
+	// ====== FAQ Tabs ====== //
+
+	$('ul.faqs li').on('click', function(){
+		$('ul.faqs li').removeClass('active');
+		$(this).addClass('active');
+		$('.faqs-content .inner').removeClass('active');
+		var tab = $(this).attr('data');
+		$('#' + tab).addClass('active');
+	});
+
+	$('.faqs-content ul.questions li h5').on('click', function() 
+	{
+		$(this).parent().find(".answer").slideToggle(200);
+	});
+
 
 		
 
-		// ================================================================
-		//			1.6 Countries
-		// ================================================================
 
-			$(document).ready(function()
-			{
-				let append = '';
-				$.each(countries, function(key, value) {
-					append += '<li data="' + value.code.toLowerCase() + '" code="' + value.dial_code + '" >';
-					append += '<div class="f" style="background-image: url(https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/' + value.code.toLowerCase() + '.svg);">';
-					append += '</div>';
-					append += '<p>' + value.name + '</p>';
-					append += '</li>';
-				});
-				$('ul.countriesList').html(append);
-			});
 
-			$(document).on('click', '.openCountrySelector', function(e)
-	    	{
-	    		$(this).parents().eq(1).find('.phone-holder').toggleClass('active');
-	    	});
 
-			$(document).on('click', 'ul.countriesList li' , function(e)
-	    	{
-	    		let countryCode = $(this).attr('data');
-	    		let countryDialCode = $(this).attr('code');
-	    		$(this).parents().eq(1).find('.flag').css('background-image', 'url(https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/' + countryCode + '.svg)');
-				$(this).parents().eq(1).find('.code').html(countryDialCode);
-				$('.phone-holder').removeClass('active');
-	    	});
-
-	    // ================================================================
-		//			1.7 Group Size
-		// ================================================================
-
-			const groupSize = ['1','2','3','4','5','6','7','8','9','10', '10+'];
-			const hotelRooms = ['1','2','3','4','4+'];
-			const hotelAdults = ['1','2','3','4','5','6','7','8','8+'];
-			const hotelChildren = ['0','1','2','3','4','5','6','6+'];
-			const hotelType = ['1','2','3','4','5'];
-
-			const pad = (d) => {
-			    return (d < 10) ? '0' + d.toString() : d.toString();
-			}
-
-			const generateBookingRefNo = (str) => 
-			{
-				const d = new Date();
-				return 'FN-' + str + '-' + d.getFullYear() + '' + pad(d.getMonth()) + '' + d.getDate() + '' + pad(d.getHours()) + '' + d.getMinutes() + '' + d.getSeconds();
-			};
-
-			$(document).ready(function()
-			{
-				let appendGroupSize = '<option value="">Select your group size</option>';
-				$.each(groupSize, function(key, value) {
-					appendGroupSize += '<option value="' + value + '" >' + value + '</option>';
-				});
-				$('select.groupSize').html(appendGroupSize);
-
-				let appendHotelRooms = '<option value="">How many rooms?</option>';
-				$.each(hotelRooms, function(key, value) {
-					appendHotelRooms += '<option value="' + value + '" >' + value + '</option>';
-				});
-				$('select.hotelRooms').html(appendHotelRooms);
-
-				let appendHotelAdults = '<option value="">How many adults?</option>';
-				$.each(hotelAdults, function(key, value) {
-					appendHotelAdults += '<option value="' + value + '" >' + value + '</option>';
-				});
-				$('select.hotelAdults').html(appendHotelAdults);
-
-				let appendHotelChildren = '<option value="">How many children?</option>';
-				$.each(hotelChildren, function(key, value) {
-					appendHotelChildren += '<option value="' + value + '" >' + value + '</option>';
-				});
-				$('select.hotelChildren').html(appendHotelChildren);
-
-				let appendHotelType = '<option value="">Select your preference</option>';
-				$.each(hotelType, function(key, value) {
-					appendHotelType += '<option value="' + value + ' star' + '" >' + value + ' star' + '</option>';
-				});
-				$('select.hotelType').html(appendHotelType);
-			});
-
-	// =======================================
-	//			2. Home Page
-	// =======================================		
-		
-		// ================================================================
-		//			2.0 Datepicker
-		// ================================================================
 			
-			jQuery(document).ready(function($)
-			{
-				$(document).on('focus', 'input.datepickerDate' , function(e)
-	        	{
-	        		$(this).datepicker();
-	        	});
-			});
+			
 
 		// ================================================================
 		//			2.1 Form Tab
@@ -396,20 +424,7 @@ $(function(){
 		//			2.4 Range Preview
 		// ================================================================
 
-			$(document).on('input', '#tourBudget', function()
-			{
-				$('#tourBudgetInput').val($(this).val());
-			});
-
-			$(document).on('input', '#hotelBudget', function()
-			{
-				$('#hotelBudgetInput').val($(this).val());
-			});
-
-			$(document).on('input', '#activityBudget', function()
-			{
-				$('#activityBudgetInput').val($(this).val());
-			});
+			
 
         // ================================================================
 		//			2.5 Destinations
@@ -716,37 +731,15 @@ $(function(){
 		//			3.1 FAQs Tab
 		// ================================================================
 
-			$('ul.faqs li').on('click', function(){
-				$('ul.faqs li').removeClass('active');
-				$(this).addClass('active');
-				$('.faqs-content .inner').removeClass('active');
-				var tab = $(this).attr('data');
-				$('#' + tab).addClass('active');
-			});
+			
 
 		// ================================================================
 		//			3.2 FAQs Q&As
 		// ================================================================
 			
-			$('.faqs-content ul.questions li h5').on('click', function() 
-			{
-				$('.faqs-content ul.questions li .answer').slideUp(200);
-				$(this).parent().find(".answer").slideDown(200);
-			});
+			
 
-	// =======================================
-	//			4. Tour Single Page
-	// =======================================
-
-		// ================================================================
-		//			4.1 Overview Tab
-		// ================================================================
-				
-			$('ul#tour-tabs li').on('click', function() 
-			{
-				$('ul#tour-tabs li').removeClass('active');
-				$(this).addClass('active');
-			});
+	
 
     // =======================================
 	//			N. End

@@ -26,7 +26,7 @@ Template Post Type: post
 		<div class="container">
 			<div class="of-hid">
 				<div class="f-left left-content main-content">
-					<div class="title"><h1><?php the_title(); ?></h1></div>
+					<h2><?php the_title(); ?></h2>
 					<div><?php the_content(); ?></div>
 				</div>
 				<div class="f-left right-content">

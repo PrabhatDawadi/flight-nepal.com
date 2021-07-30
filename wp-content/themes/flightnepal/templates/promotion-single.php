@@ -7,6 +7,9 @@ Template Post Type: promotions, page, post
 <?php get_header(); ?>
 
 	<section class="common-page page-top" style="background-image: url(<?php bloginfo('template_directory'); ?>/images/pages/common/promotions.jpg);">
+		<div class="inner">
+			<h1><?php the_title(); ?></h1>
+		</div>
 	</section>
 
 	<section class="breadrcumb-section">

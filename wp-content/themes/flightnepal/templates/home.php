@@ -341,7 +341,6 @@ Template Post Type: post, page
 				<br>
 				<div class="of-hid">
 					<?php get_all_activities(4); ?>
-					<?php get_all_activities(4); ?>
 				</div>
 			</div>
 		</div>

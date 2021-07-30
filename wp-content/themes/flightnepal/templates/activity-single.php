@@ -28,10 +28,14 @@ Template Post Type: activities, page, post
 			<div class="of-hid">
 				<div class="f-left left-content main-content">
 					<div class="title"><h1><?php the_title(); ?></h1></div>
-					<div id="main-content"><?php the_content(); ?></div>
+					<div id="main-content">
+						<div class="readable">
+							<?php the_content(); ?>
+						</div>
+					</div>
 				</div>
 				<div class="f-left right-content">
-					<h4 class="price">Starts : <?php echo get_post_meta( get_the_ID(), 'price', true );?> <span>Per Person</span></h4>
+					<h4 class="price">Starts : <span class="color-pink"><?php echo get_post_meta( get_the_ID(), 'price', true );?></span> <span class="pp">Per Person</span></h4>
 					<h6 class="trip-info-title">Trip Info:</h6>
 					<div class="tour-info">
 						<table>
@@ -59,28 +63,46 @@ Template Post Type: activities, page, post
 					</div>
 				</div>
 			</div>
-			<div class="inquire-single">
-				<h4>Inquire Now:</h4>
-				<br>
-				<div class="common-form-elements activitySingleFormHolder" data="<?php the_title(); ?>">
-					<?php
-						echo do_shortcode(
-							'[contact-form-7 id="242" title="Activity Booking Enquiry"]'
-						);
-					?>
-				</div>
-			</div>
-			<div class="of-hid">
-				<h4>FAQs :</h4>
-				<br>
-				<ul class="faqs">
-					<li data="tour-faqs" class="active">Activity</li>
-				</ul>
-				<div class="faqs-content">
-					<div id="tour-faqs" class="inner active">
-						<ul class="questions">
-							<?php get_faq_by_group('activity'); ?>
-						</ul>
+			<div class="content-below">
+				<div class="of-hid">
+					<div class="left">
+						<div class="inquire-single">
+							<h4>Inquire Now:</h4>
+							<br>
+							<div class="common-form-elements activitySingleFormHolder" data="<?php the_title(); ?>">
+								<?php
+									echo do_shortcode(
+										'[contact-form-7 id="242" title="Activity Booking Enquiry"]'
+									);
+								?>
+							</div>
+						</div>
+						<div class="of-hid">
+							<h4>FAQs :</h4>
+							<br>
+							<ul class="faqs">
+								<li data="tour-faqs" class="active">Activity</li>
+							</ul>
+							<div class="faqs-content">
+								<div id="tour-faqs" class="inner active">
+									<ul class="questions">
+										<?php get_faq_by_group('activity'); ?>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="right">
+						<h5>Other Activites in :</h5>
+						<br>
+						<div class="other-tour-destinations">
+							<?php get_other_activities(get_post_meta( get_the_ID(), 'country', true )); ?>
+						</div>
+						<br>
+						<h5>Promotions :</h5>
+						<div class="some-travel-tips">
+							<?php get_latest_promotions(2); ?>
+						</div>
 					</div>
 				</div>
 			</div>
