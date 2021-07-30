@@ -65,17 +65,3 @@
 				</div>
 			</div>
 		</header>
-
-		<div id="notification">
-			<div class="icon">
-				<div class="img">
-					<img alt="Flight Nepal Logo" src="<?php bloginfo('template_directory'); ?>/images/logo/flight-nepal.svg">
-				</div>
-			</div>
-			<div class="desc">
-				<h6 class="success">Oops!</h6>
-				<div class="msg">
-				</div>
-			</div>
-			<img class="close" src="<?php bloginfo('template_directory'); ?>/images/icons/close.svg" alt="">
-		</div>

@@ -15,7 +15,7 @@
         justify-content: center;
         align-items: center;
         position: relative;
-        padding-top: 100px;
+        padding-top: 102px;
     }
     .page-top:before {
         position: absolute;
@@ -31,12 +31,11 @@
         -khtml-opacity: 0.42;
         -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=42)';
         opacity: 0.42;
-
         z-index: 4;
     }
     .common-page,
     .tour-single-page {
-        height: 480px;
+        height: 420px;
     }
     .tour-single-page h1 {
         max-width: 680px;
@@ -59,11 +58,12 @@
         background: #17181f;
     }
     ul.breadcrumb {
-        padding: 20px 0;
+        padding: 30px 0;
         border-bottom: solid 2px #202229;
+        margin-bottom: 20px;
     }
     ul.breadcrumb li {
-        font-size: 15px;
+        font-size: 16px;
         line-height: 20px;
         display: inline-block;
         vertical-align: top;
@@ -81,6 +81,7 @@
         right: 5px;
         top: 0;
         line-height: 20px;
+        color: #666;
     }
     ul.breadcrumb li a:hover {
         color: #6C72CB;
@@ -101,7 +102,8 @@
             position: relative;
             padding-bottom: 40px;		
         }
-        #home:before {
+        #home:before,
+        .contact-box:before {
             position: absolute;
             content: '';
             top: 0;
@@ -735,6 +737,23 @@
         .inquire-single {
             margin-bottom: 40px;
         }
+        .hotelSingleFormHolder,
+        .tourSingleFormHolder,
+        .activitySingleFormHolder,
+        .contactFormHolder,
+        .promotionSingleFormHolder {
+            background: #202229;
+            padding: 40px 40px;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -o-border-radius: 4px;
+            -ms-border-radius: 4px;
+            border-radius: 4px;
+        }
+        .promotionSingleFormHolder {
+            margin-top: 10px;
+            padding: 10px 15px 20px 20px;
+        }
         .inquire-single table {
             width: 100%;
             display: table;
@@ -742,13 +761,13 @@
             table-layout: fixed;
         }
         .inquire-single table tr td {
-            padding-bottom: 8px;
+            padding-bottom: 5px;
         }
         .inquire-single table tr td:nth-child(1) {
-            padding-right: 8px;
+            padding-right: 5px;
         }
         .inquire-single table tr td:nth-child(2) {
-            padding-left: 8px;
+            padding-left: 5px;
         }
         .inquire-single table tr td[colspan="2"] {
             padding-right: 0;
@@ -764,6 +783,16 @@
         }
         .inquire-single table tr td input[type="submit"] {
             width: auto;
+        }
+        .promotionSingleFormHolder table tr td {
+            padding: 0 0 4px 0;
+        }
+        .promotionSingleFormHolder table tr td textarea {
+            height: 86px;
+        }
+        .promotionalContent {
+            background: #202229;
+            padding: 25px 20px 20px 30px;
         }
         label.budgetLabel input[type="text"] {
             background: transparent;
@@ -817,7 +846,7 @@
         .phone-holder .country-select-open .flag,
         .phone-holder ul.dropdown .f {
             background: url(../images/icons/bg/sample-bg.jpg) no-repeat center center;
-              background-position: center center;
+            background-position: center center;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
@@ -912,10 +941,6 @@
         }
         .phone-holder ul.dropdown li:hover{
             background: #f0f0f0;
-        }
-        .phone-holder ul.originDropdown,
-        .phone-holder ul.destinationDropdown{
-            display: none;
         }
         .phone-holder ul.dropdown {
             top: 32px;
@@ -1063,12 +1088,6 @@
 		span.wpcf7-not-valid-tip{
 			display: none;
 		}
-        .hotelSingleFormHolder,
-        .tourSingleFormHolder,
-        .activitySingleFormHolder {
-            background: #202229;
-            padding: 30px;
-        }
         .readable p {
             color: #aaa;
         }
@@ -1171,5 +1190,133 @@
             margin-bottom: 0px !important;
         }
 
+/* ====================================================
+	6. CONTACT
+==================================================== */
 
-        
+    /* ====== Contact Info ====== */
+
+        .contact-box {
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -o-border-radius: 4px;
+            -ms-border-radius: 4px;
+            border-radius: 4px;
+            height: 568px;
+            padding: 40px;
+            position: relative;
+        }
+        .contact-box .i {
+            position: relative;
+            z-index: 3;
+        }
+        .contact-box svg {
+            height: 40px;
+            width: auto;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .contact-box svg path {
+            fill: #fff;
+        }
+        .contact-box .info {
+            position: absolute;
+            left: 40px;
+            bottom: 40px;
+            padding-right: 40px;
+        }
+
+/* ====================================================
+	7. BOOK A FLIGHT
+==================================================== */
+
+    /* ====== Landing Info ====== */
+
+        .book-a-flight {
+            background: #17181f;
+            padding-bottom: 80px;
+        }
+        .book-a-flight table {
+            width: 100%;
+            display: table;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+        .book-a-flight table tr td {
+            padding-bottom: 5px;
+            position: relative;
+        }
+        .book-a-flight table tr td:nth-child(1) {
+            padding-right: 6px;
+        }
+        .book-a-flight table tr td:nth-child(2) {
+            padding-left: 6px;
+            padding-right: 6px;
+        }
+        .book-a-flight table tr td:nth-child(3) {
+            padding-left: 6px;
+        }
+        .book-a-flight table tr td[colspan="12"] {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .book-a-flight table tr td label {
+            font-size: 13px;
+            color: #b8b8b8;
+            position: relative;
+        }
+        .book-a-flight table tr td select,
+        .book-a-flight table tr td input,
+        .book-a-flight table tr td textarea {
+            width: 100%;
+        }
+        .book-a-flight table tr td input[type="submit"] {
+            width: auto;
+        }
+        .book-a-flight ul.countryDropdown {
+            position: absolute;
+            top: 68px;
+            max-width: 100%;
+            background: #fff;
+            border: solid 1px #cfcfcf;
+            max-height: 230px;
+            overflow-y: scroll;
+            z-index: 99999 !important;
+            left: 0px;
+            width: -webkit-calc(100% - 5px);
+            width: -moz-calc(100% - 5px);
+            width: -o-calc(100% - 5px);
+            width: -ms-calc(100% - 5px);
+            width: calc(100% - 5px);
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -o-border-radius: 4px;
+            -ms-border-radius: 4px;
+            border-radius: 4px;
+            display: none;
+        }
+        .book-a-flight ul.countryDropdown li {
+            font-size: 13px;
+            line-height: 16px;
+            border-bottom: solid 1px #f0f0f0;
+            color: #2c3e50;
+            padding: 12px 20px 12px 12px;
+            cursor: pointer;
+        }
+        .book-a-flight ul.countryDropdown li:last-child {
+            border-bottom: none;
+        }
+        .book-a-flight ul.countryDropdown li:hover {
+            background: #f0f0f0;
+        }
+        .book-a-flight ul.countryDropdown li span {
+            font-weight: 900;
+        }
+        .book-a-flight input[type="radio"] {
+            display: inline-block;
+	        vertical-align: top;
+            margin: 2px 6px 0 0;
+        }
+        .book-a-flight table tr td.radio span.wpcf7-list-item-label{
+            margin-right: 10px;
+        }

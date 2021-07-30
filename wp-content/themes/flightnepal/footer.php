@@ -78,15 +78,6 @@
 				<p>v1.0.0</p>
 			</div>
 		</footer>
-		
-		<!-- <script src="https://www.google.com/recaptcha/api.js?onload=CaptchaCallback&render=explicit" async defer></script>
-		<script type="text/javascript">
-			var mainForm;
-		    var CaptchaCallback = function()
-		    {
-		        mainForm = grecaptcha.render('sendMailButton', {'sitekey' : '6LfNc6QUAAAAAL_wfgE5DMkpBojhQCX0Kz1NE60g'});
-		    };
-		</script> -->
 
 		<?php wp_footer();?>
 			

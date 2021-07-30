@@ -32,17 +32,3 @@ Template Post Type: page
 	</section>
 
 <?php get_footer();?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-

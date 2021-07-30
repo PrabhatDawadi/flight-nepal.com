@@ -13,6 +13,14 @@ body {
 	font-family: 'Nunito Sans', sans-serif;
 	line-height: 1.5;
 }
+.grecaptcha-badge,
+.opacity-0{
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	-moz-opacity: 0;
+	-khtml-opacity: 0;
+	opacity: 0;
+}
 .container{
 	width: 1120px;
 	margin: 0 auto;
@@ -53,7 +61,6 @@ h6{
 p{
 	font-size: 15px;
 	line-height: 1.5;
-	color: #1a2b47;
 	color: #6d6d6d;
 }
 .cover-img {
@@ -112,6 +119,7 @@ li { list-style: none; }
 .cur-pointer { cursor: pointer; }
 .mar-0-a { margin: 0 auto; }
 .color-white { color: white; }
+.color-light { color: #6d6d6d; }
 .color-dark { color: #17181f; }
 .color-blue { color: #6C72CB; }
 .color-pink { color: #CB69C1; }
@@ -221,11 +229,12 @@ textarea {
 }
 input[type="radio"] {
 	background: #cfcfcf;
-	height: 16px;
-	width: 16px !important;
+	height: 20px;
+	width: 20px !important;
 	position: relative;
 	border: solid 1px #aaaaaa;
 	position: relative;
+	padding: 0;
 }
 input[type="radio"],
 input[type="radio"]:after {
@@ -238,15 +247,15 @@ input[type="radio"]:after {
 input[type="radio"]:after {
 	position: absolute;
 	content: '';
-	height: 8px;
-	width: 8px;
+	height: 12px;
+	width: 12px;
 	top: 2px;
 	left: 2px;
 	background: rgba(255,255,255,.6);
 	border: solid 1px rgba(0,0,0,.2);
 }
 input[type="radio"]:checked:after {
-	background: #ff7300;
+	background: #CB69C1;
 }
 select {
 	background: #fff;
@@ -688,772 +697,96 @@ footer ul.aff li img {
 	border: none;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-		
-
-
-
-
-		/* ================================================
-			1.4 Notification
-		================================================ */
-
-			#notification{
-				position: fixed;
-				-webkit-box-shadow: 0px 0px 40px rgba(0,0,0,.48);
-		        -moz-box-shadow: 0px 0px 40px rgba(0,0,0,.48);
-		        -o-box-shadow: 0px 0px 40px rgba(0,0,0,.48);
-		        -ms-box-shadow: 0px 0px 40px rgba(0,0,0,.48);
-		        box-shadow: 0px 0px 40px rgba(0,0,0,.48);
-		        z-index: 9999999 !important;
-		        bottom: 20px;
-		        border: solid 1px #f0f0f0;
-		        background: #FFF;
-		        width: 300px;
-		        min-height: 86px;
-		        overflow: hidden;
-		        -webkit-border-radius: 4px;
-		        -moz-border-radius: 4px;
-		        -o-border-radius: 4px;
-		        -ms-border-radius: 4px;
-		        border-radius: 4px;
-		        right: -400px;
-			}
-			#notification .icon{
-				width: 60px;
-				float: left;
-				padding: 15px;
-			}
-			#notification .icon .img{
-				height: 30px;
-				width: 30px;
-				background: #ff7300;
-				display: block;
-				padding: 6px;
-				-webkit-border-radius: 4px;
-		        -moz-border-radius: 4px;
-		        -o-border-radius: 4px;
-		        -ms-border-radius: 4px;
-		        border-radius: 4px;
-			}
-			#notification .icon .img img{
-				width: auto;
-				height: 100%;
-				margin: 0 auto;
-				display: block;
-			}
-			#notification .desc{
-				float: left;
-				width: -webkit-calc(100% - 60px);
-		        width: -moz-calc(100% - 60px);
-		        width: -o-calc(100% - 60px);
-		        width: -ms-calc(100% - 60px);
-		        width: calc(100% - 60px);
-		        padding: 10px 30px 20px 15px;
-		        border-left: solid 1px #f0f0f0;
-			}
-			#notification h6{
-				font-size: 14px;
-				margin-bottom: 5px;
-			}
-			#notification p{
-				font-size: 12px;
-				line-height: 1.3;
-			}
-			#notification h6.error{
-				color: red;
-			}
-			#notification h6.success{
-				color: green;
-			}
-			#notification img.close{
-				position: absolute;
-				top: 10px;
-				right: 10px;
-				height: 16px;
-				cursor: pointer;
-			}
-
-	/* ====================================================
-		2. Header & Top Elements 
-	==================================================== */
-
-		/* ================================================
-			2.1 Overview
-		================================================ */
-
-			
-
-	/* ====================================================
-		3. Footer
-	==================================================== */
-
-		
-
-	/* ====================================================
-		4. Common Page 
-	==================================================== */
-
-		/* ================================================
-			4.1 Landing Section 
-		================================================ */
-
-			
-
-		/* ================================================
-			4.2 Country Wise
-		================================================ */
-
-			
-
-	/* ====================================================
-		5. Home Page 
-	==================================================== */
-
-		/* ================================================
-			5.1 Landing Section 
-		================================================ */
-
-			
-
-
-			#home .form{
-				position: relative;
-				z-index: 99;
-				width: 860px;
-			}
-			#home ul.selectors{
-				overflow: hidden;
-			}
-			#home ul.selectors li{
-				float: left;
-				line-height: 40px;
-				background: #1a8641;
-				color: #FFF;
-				padding: 0 20px;
-				border-right: solid 1px rgba(0,0,0,.2);
-				cursor: pointer;
-			}
-			#home ul.selectors li:last-child{
-				border-right: none;
-			}
-			#home ul.selectors li.active{
-				background: #ff7300;
-			}
-			#home .content{
-				padding: 10px 15px 20px 15px;
-				background: rgba(255,255,255,1);
-				/* background: #202229; */
-			}
-			#home .content .one{
-				display: none;
-			}
-			#home .content .content-active{
-				display: block;
-			}
-			#home .content table{
-				width: 100%;
-				display: table;
-				border-collapse: collapse;
-				table-layout: fixed;
-			}
-			#home .content table tr td{
-				padding: 4px 5px;
-			}
-			#home .content table tr td.notRequired{
-				-webkit-opacity: 0.2;
-  				-moz-opacity: 0.2;
-  				filter: alpha(opacity=20);
-  				-khtml-opacity: 0.2;
-  				-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=20)';
-  				opacity: 0.2;
-			}
-			#home .content table tr.add-city,
-			#home .content table tr.return{
-				display: none;
-			}
-			#home .content table tr.add-city{
-				text-align: left;
-			}
-			#home .content table tr.add-city p{
-				background: #34495e;
-				width: auto;
-				display: inline-block;
-				padding: 5px 10px;
-				color: #FFF;
-				cursor: pointer;
-				-webkit-border-radius: 4px;
-		        -moz-border-radius: 4px;
-		        -o-border-radius: 4px;
-		        -ms-border-radius: 4px;
-		        border-radius: 4px;
-			}
-			#home .content table tr td p.remove{
-				line-height: 26px;
-				background: #bdc3c7;
-				padding: 0px 12px;
-				margin-top: 22px;
-				font-size: 12px;
-				color: red;
-				width: auto;
-				display: inline-block;
-				-webkit-border-radius: 4px;
-		        -moz-border-radius: 4px;
-		        -o-border-radius: 4px;
-		        -ms-border-radius: 4px;
-		        border-radius: 4px;
-		        cursor: pointer;
-			}
-			#home .content table tr td input,
-			#home .content table tr td select{
-				width: 100%;
-			}
-			
-			#home .content table tr td input[type="submit"]{
-				width: auto;
-				float: right;
-			}
-			
-			#home .content table tr td.flightType span{
-				margin-right: 10px;
-			}
-			input[type="submit"]:hover{
-
-			}
-			#home .content table tr td .ajax-loader{
-				margin-top: 4px;
-				margin-top: 22px;
-				margin-right: 12px;
-			}
-			#home .content table tr td input[type="radio"]{
-				display: inline-block;
-				vertical-align: top;
-				width: auto;
-				margin-top: 5px;
-				margin-right: 5px;
-			}
-			#home .content table tr td label{
-				font-size: 12px;
-				line-height: 15px;
-				color: #1a2b47;
-			}
-			.origin-destination-ip-holder{
-				position: relative;
-			}
-			
-			
-			#home .content table tr td input[type="range"]{
-				line-height: 40px;
-				padding: 0;
-				border: none;
-			}
-			#home .content table tr td textarea{
-				width: 100%;
-				display: block;
-				height: auto;
-				resize: none;
-				line-height: 16px;
-				padding: 8px 8px;
-			}
-
-			/* ==== Range Input ==== */
-
-			
-
-			/* ==== Datepicker ==== */
-
-			/*  */
-
-	        /* ===== Countries Selector ==== */
-
-	        
-			
-			
-
-		/* ================================================
-			5.2 Form Preview
-		================================================ */
-
-			#formPreview{
-				position: fixed;
-				z-index: 99999999 !important;
-				background: rgba(255,255,255,.86);
-				background: rgba(0,0,0,.48);
-				height: 100vh;
-				width: 100vw;
-				top: 0;
-				left: 0;
-				display: none;
-			}
-			#formPreview .block{
-				width: 100%;
-				height: 100%;
-				max-height: 100%;
-				position: absolute;
-				top: 0;
-				left: 0;
-				overflow-y: scroll;
-				padding-top: 60px;
-			}
-			#formPreview .inner{
-				background: #FFF;
-				max-width: 680px;
-				height: auto;
-				margin: 0 auto;
-				display: block;
-				margin-bottom: 120px;
-				-webkit-box-shadow: 0px 0px 40px rgba(0,0,0,.68);
-		        -moz-box-shadow: 0px 0px 40px rgba(0,0,0,.68);
-		        -o-box-shadow: 0px 0px 40px rgba(0,0,0,.68);
-		        -ms-box-shadow: 0px 0px 40px rgba(0,0,0,.68);
-		        box-shadow: 0px 0px 40px rgba(0,0,0,.68);
-			}
-			#formPreview h5{
-				text-align: center;
-				padding: 30px 60px;
-				background: #ff7300;
-				color: #fff;
-				border-bottom: solid 2px rgba(0,0,0,0.11);
-				line-height: 24px;
-				position: relative;
-			}
-			img#closePreview{
-				position: absolute;
-				top: 30px;
-				right: 25px;
-				height: 25px;
-				cursor: pointer;
-			}
-			#formPreview .con{
-				padding: 40px 60px 60px 60px;
-			}
-			#formPreview .con table{
-				width: 100%;
-				display: table;
-				border-collapse: collapse;
-			}
-			#formPreview .con table tr td{
-				padding: 4px 10px;
-				border: solid 1px #f0f0f0;
-			}
-			#formPreview .con table tr td img{
-				height: 20px;
-				width: auto;
-				display: inline-block;
-				vertical-align: top;
-				margin-right: 10px;
-			}
-			#formPreview .con table tr.return-block{
-				display: none;
-			}
-			#formPreview .con p{
-				margin-bottom: 10px;
-			}
-			#formPreview .con table tr td p{
-				font-size: 11px;
-				margin-top: 5px;
-				margin-bottom: 5px;
-			}
-			#formPreview .con p span{
-				color: #1a8641;
-			}
-			#formPreview .con .btn-holder{
-				text-align: right;
-			}
-			#formPreview .con .btn-holder .ajax-loader{
-				display: block !important;
-			}
-			#formPreview .con .btn-holder button,
-			#formPreview .con .btn-holder input{
-				display: inline-block;
-				vertical-align: top;
-				margin-top: 0;
-				margin-bottom: 0;
-			}
-			#formPreview .con .btn-holder button.cancel{
-				background: #f0f0f0;
-				border-color: #f0f0f0;
-				color: #8f8f8f;
-				margin-right: 4px;
-			}
-			#formPreview .con .btn-holder p{
-				line-height: 40px;
-				cursor: pointer;
-				padding-right: 10px;
-			}
-			#formPreview .con .update-details{
-				text-align: center;
-			}
-			#formPreview .con .update-details p{
-				width: auto;
-				margin: 0 auto;
-				display: inline-block;
-				cursor: pointer;
-				text-decoration: underline;
-			}
-			#formPreview .con .update-details p:hover{
-				text-decoration: none;
-			}
-			#flight-input-elements{
-				display: flex;
-			}
-			#flight-input-elements input{
-				width: auto;
-				display: inline-block;
-			}
-			#flight-input-elements .wpcf7{
-				width: 100% !important;
-			}
-			#flight-input-elements .inputs{
-				height: 0px !important;
-				overflow: hidden;
-			}
-			
-
-		/* ================================================
-			5.3 Offers
-		================================================ */
-
-			
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		/* ================================================
-			5.4 Top Destinations
-		================================================ */
-
-			
-			
-
-		/* ================================================
-			5.5 Promotions
-		================================================ */
-			
-			
-
-	/* ====================================================
-		6. Destinations
-	==================================================== */
-
-		/* ================================================
-			6.1 All Destinations
-		================================================ */
-
-			
-
-	/* ====================================================
-		7. Promotions
-	==================================================== */
-
-		/* ================================================
-			7.1 All Promotions
-		================================================ */
-
-			
-
-	/* ====================================================
-		8. Blogs
-	==================================================== */
-
-		/* ================================================
-			8.1 All Blogs
-		================================================ */
-
-			
-
-	/* ====================================================
-		9. Common Page
-	==================================================== */
-
-		/* ================================================
-			9.1 Common Content
-		================================================ */
-
-			.common-content{
-				padding: 20px 0 40px 0;
-				background: #17181f;
-			}
-			.common-content .title{
-				margin-bottom: 20px;
-			}
-			.common-content .title h1{
-				font-size: 24px;
-				line-height: 32px;
-			}
-			.common-content .left-content{
-				width: -webkit-calc(100% - 300px);
-		        width: -moz-calc(100% - 300px);
-		        width: -o-calc(100% - 300px);
-		        width: -ms-calc(100% - 300px);
-		        width: calc(100% - 300px);
-		        padding-right: 40px;
-		        font-size: 13px;
-		        line-height: 20px;
-		        color: #1a2b47;
-			}
-			.common-content .right-content{
-				width: 300px;
-			}
-			.common-content .main-content h1,
-			.common-content .main-content h2,
-			.common-content .main-content h3,
-			.common-content .main-content h4,
-			.common-content .main-content h5,
-			.common-content .main-content h6,
-			.common-content .main-content p,
-			.common-content .main-content ul{
-				margin-bottom: 20px;
-			}
-			.tab-content p {
-				color: #7f8c8d;
-			}
-			.common-content .main-content ul li{
-				position: relative;
-				padding-left: 20px;
-				margin-bottom: 10px;
-				font-size: 13px;
-				color: #8f8f8f;
-				font-family: 'Nunito Sans', sans-serif;
-			}
-			.common-content .main-content ul li:after{
-				position: absolute;
-				content: '';
-				height: 6px;
-				width: 6px;
-				top: 6px;
-				left: 0;
-				background: #CB69C1;
-				-webkit-border-radius: 4px;
-		        -moz-border-radius: 4px;
-		        -o-border-radius: 4px;
-		        -ms-border-radius: 4px;
-		        border-radius: 4px;
-			}
-			.common-content .main-content ul li a{
-				color: #1a8641;
-				text-decoration: underline;
-			}
-			.common-content .main-content ul li a:hover{
-				color: #ff7300;
-			}
-			#main-content ul.wpsm_nav-tabs li a,
-			#main-content ul.wpsm_nav li a{
-				font-family: 'Nunito Sans', sans-serif !important;
-				background: blue;
-			}
-			#main-content ul.wpsm_nav-tabs li:after{
-				display: none;
-			}
-			#main-content ul.wpsm_nav-tabs li a{
-				color: #2980b9;
-			}
-			#main-content .tab-content > .tab-pane{
-				font-family: 'Nunito Sans', sans-serif !important;
-				font-size: 13px;
-			}
-			#main-content .tab-content > .tab-pane{
-
-			}
-			#main-content h3{
-				font-size: 24px !important;
-				line-height: 36px !important;
-			}
-			.common-content .right-content h4.price span.pp {
-				font-size: 13px;
-			}
-			
-			
-
-		/* ================================================
-			9.2 Travel Tips
-		================================================ */
-
-			
-
-		/* ================================================
-			9.3 Single Page Forms
-		================================================ */
-
-
-
-
-			
-
-	/* ====================================================
-		10. Flight Search Enquiry
-	==================================================== */
-
-		/* ================================================
-			10.1 Inquiry
-		================================================ */
-
-			.enquiry{
-			}
-			.enquiry .col-1-2:first-child{
-				padding-right: 30px;
-			}
-			.enquiry .col-1-2:last-child{
-				padding-left: 30px;
-			}
-
-
-
-			/* .common-form-elements input{
-				height: 40px;
-				line-height: 40px;
-				padding: 0 15px;
-			}
-			.common-form-elements textarea{
-				padding: 12px 15px;
-				line-height: 16px;
-				height: auto;
-				resize: none;
-			} */
-			.common-form-elements input[type="submit"]{
-				width: auto;
-			}
-			.common-form-elements textarea:focus,
-			.common-form-elements input:focus{
-				border-color: #ff7300;
-			}
-			.enquiry-details table{
-				width: 100%;
-				display: table;
-				border-collapse: collapse;
-				margin-top: 20px;
-			}
-			.enquiry-details table tr td{
-				border: solid 1px #f0f0f0;
-				padding: 6px 10px;
-			}
-			.enquiry-details table tr td p{
-				line-height: 20px;
-			}
-			.enquiry-details table tr td:first-child{
-				width: 20%;
-				background: #1a8641;
-			}
-			.enquiry-details table tr td:first-child p{
-				color: #FFF;
-			}
-			.enquiry-details table tr.no-bg td{
-				background: transparent;
-			}
-			.enquiry-details table tr.no-bg td p{
-				color: #000;
-			}
-			.enquiry-details table tr td input{
-				background: transparent;
-				z-index: -1;
-				position: absolute;
-				line-height: 26px;
-				height: 26px;
-				color: #000;
-			}
-			.enquiry-details table tr td span input,
-			.enquiry-details table tr td span input:focus,
-			.enquiry-details table tr td span input:hover{
-				border: none;
-				outline: none;
-			}
-			.enquiry-details table tr td span{
-				position: relative;
-				width: 100%;
-				background: transparent;
-				height: 26px;
-				display: block;
-			}
-			.enquiry-details table tr td span input{
-				position: absolute;
-				width: 100%;
-			}
-			.enquiry-details table tbody{
-				display: table;
-				width: 100%;
-			}
-			.enquiry-details table tbody.ori-des-dep{
-				display: block;
-				height: 150px;
-				width: 100%;
-				overflow-x: hidden;
-				overflow-y: auto;
-			}
-
-	/* ====================================================
-		11. FAQs
-	==================================================== */
-
-		/* ================================================
-			11.1 Tabs
-		================================================ */
-
-			
-
-	/* ====================================================
-		12. Contact Page
-	==================================================== */
-
-		/* ================================================
-			12.1 Contact Box
-		================================================ */
-
-			.contact-box{
-				background: url(../images/icons/bg/sample-bg.jpg) no-repeat center center;
-			  	background-position: center center;
-				-webkit-background-size: cover;
-				-moz-background-size: cover;
-				-o-background-size: cover;
-				background-size: cover;
-				background-repeat: no-repeat;
-				-webkit-border-radius: 4px;
-		        -moz-border-radius: 4px;
-		        -o-border-radius: 4px;
-		        -ms-border-radius: 4px;
-		        border-radius: 4px;
-				height: 440px;
-				padding: 40px;
-				position: relative;
-			}
-			.contact-box .white{
-				color: #FFF;
-			}
-			.contact-box .info{
-				position: absolute;
-				left: 40px;
-				bottom: 40px;
-				padding-right: 40px;
-			}
-
-	
-			
-
-
-
-
-
-
-
-
-
+/* ====================================================
+	N. Common Page
+==================================================== */
+
+	.common-content{
+		padding: 20px 0 40px 0;
+		background: #17181f;
+	}
+	.common-content .title{
+		margin-bottom: 20px;
+	}
+	.common-content .title h1{
+		font-size: 24px;
+		line-height: 32px;
+	}
+	.common-content .left-content{
+		width: -webkit-calc(100% - 300px);
+		width: -moz-calc(100% - 300px);
+		width: -o-calc(100% - 300px);
+		width: -ms-calc(100% - 300px);
+		width: calc(100% - 300px);
+		padding-right: 40px;
+		font-size: 13px;
+		line-height: 20px;
+		color: #1a2b47;
+	}
+	.common-content .right-content{
+		width: 300px;
+	}
+	.common-content .main-content h1,
+	.common-content .main-content h2,
+	.common-content .main-content h3,
+	.common-content .main-content h4,
+	.common-content .main-content h5,
+	.common-content .main-content h6,
+	.common-content .main-content p,
+	.common-content .main-content ul{
+		margin-bottom: 20px;
+	}
+	.tab-content p {
+		color: #7f8c8d;
+	}
+	.common-content .main-content ul li{
+		position: relative;
+		padding-left: 20px;
+		margin-bottom: 10px;
+		font-size: 13px;
+		color: #8f8f8f;
+		font-family: 'Nunito Sans', sans-serif;
+	}
+	.common-content .main-content ul li:after{
+		position: absolute;
+		content: '';
+		height: 6px;
+		width: 6px;
+		top: 6px;
+		left: 0;
+		background: #CB69C1;
+		-webkit-border-radius: 4px;
+		-moz-border-radius: 4px;
+		-o-border-radius: 4px;
+		-ms-border-radius: 4px;
+		border-radius: 4px;
+	}
+	.common-content .main-content ul li a{
+		color: #CB69C1;
+		text-decoration: underline;
+	}
+	.common-content .main-content ul li a:hover{
+		color: #6C72CB;
+	}
+	#main-content ul.wpsm_nav-tabs li a,
+	#main-content ul.wpsm_nav li a{
+		font-family: 'Nunito Sans', sans-serif !important;
+		color: #6C72CB;
+	}
+	#main-content ul.wpsm_nav-tabs li:after{
+		display: none;
+	}
+	#main-content ul.wpsm_nav-tabs li a{
+		color: #2980b9;
+	}
+	#main-content .tab-content > .tab-pane{
+		font-family: 'Nunito Sans', sans-serif !important;
+		font-size: 13px;
+	}
+	#main-content h3{
+		font-size: 24px !important;
+		line-height: 36px !important;
+	}
+	.common-content .right-content h4.price span.pp {
+		font-size: 13px;
+	}
